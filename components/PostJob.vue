@@ -137,6 +137,8 @@ export default {
     },
     submitSuccess (res) {
       console.log(res)
+      this.$router.replace('/')
+      this.$store.dispatch('getJobPosts')
     },
     submitError (error) {
       console.log(error)
