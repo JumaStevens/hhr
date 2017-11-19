@@ -1,4 +1,4 @@
-import express from 'express'
+const express = require('express')
 import { Nuxt, Builder } from 'nuxt'
 
 import api from './api'
