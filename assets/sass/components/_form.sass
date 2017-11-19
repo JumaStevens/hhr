@@ -1,0 +1,96 @@
+.form
+  background: white
+  padding: $fs
+  max-width: 520px
+  width: 100%
+  +mq-xs
+    width: 90%
+  +mq-s
+    width: 60%
+  +mq-m
+    width: 50%
+
+  &-title
+    margin-bottom: 16px
+    font-size: $fs1
+    text-align: center
+    text-transform: uppercase
+
+  &-fieldset
+    position: relative
+    width: 100%
+    margin: 16px 0
+    padding: 0
+    border: unset
+    display: flex
+    flex-direction: column
+
+  &-input
+    width: 100%
+    padding: 8px 0
+    resize: none
+
+  &-radio-container
+    margin-top: 8px
+    &:first-child
+      margin-right: 16px
+
+  &-radio
+    align-items: center
+    margin-right: 8px
+
+  &-label
+    position: absolute
+    bottom: 8px
+    left: 0
+    pointer-events: none
+    transform-origin: left top
+    transition: transform 200ms
+
+    &--textarea
+      bottom: unset
+      top: 0
+
+  &-border
+    width: 100%
+    height: 1px
+    position: absolute
+    z-index: 2
+    left: 50%
+    bottom: 0
+    background: $black
+    transform: translateX(-50%) scaleX(1)
+    transition: transform 200ms
+
+  &-bar
+    @extend .form-border
+    z-index: 1
+    background: $success
+    transform: translateX(-50%) scaleX(0)
+
+  &-submit
+    border-bottom: unset
+    padding: $fs-1 0
+    background: $black
+    color: white
+    cursor: pointer
+
+    &.invalid
+      border-color: red
+
+    &.error
+      background: $grey
+
+  &-input:focus ~ &-border,
+  &-input:valid ~ &-border,
+    z-index: 1
+    transform: translateX(-50%) scaleX(0)
+
+  &-input:focus ~ &-bar,
+  &-input:valid ~ &-bar
+    z-index: 2
+    transform: translateX(-50%) scaleX(1)
+
+  &-input:focus ~ &-label,
+  &-input:valid ~ &-label
+    transform: translateY(-24px) scale(0.75)
