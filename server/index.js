@@ -1,5 +1,5 @@
 const express = require('express')
-import { Nuxt, Builder } from 'nuxt'
+const { Nuxt, Builder, Utils } = require('nuxt')
 
 import api from './api'
 
